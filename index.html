@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island Prime - Premium Island Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Island Prime</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="order-btn" onclick="openCart()">Order Online <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                <link rel="stylesheet" href="style.css">
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Island Prime</h1>
+            <p>Experience the finest island cuisine with our premium selection of dishes</p>
+            <button class="cta-btn" onclick="document.getElementById('menu').scrollIntoView()">View Menu</button>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            
+            <!-- Menu Categories -->
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="showCategory('rice')">Rice</button>
+                <button class="category-btn" onclick="showCategory('noodles')">Noodles</button>
+                <button class="category-btn" onclick="showCategory('kottu')">Kottu-Roshi</button>
+                <button class="category-btn" onclick="showCategory('devils')">Devils & Spice</button>
+                <button class="category-btn" onclick="showCategory('pasta')">Pasta</button>
+                <button class="category-btn" onclick="showCategory('sandwich')">Sandwich</button>
+                <button class="category-btn" onclick="showCategory('submarine')">Submarine</button>
+                <button class="category-btn" onclick="showCategory('pizza')">Pizza</button>
+                <button class="category-btn" onclick="showCategory('beverages')">Beverages</button>
+            </div>
+
+            <!-- Menu Items -->
+            <div id="rice" class="menu-category active">
+                <h3>Rice</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Vegetable & Egg Rice" data-price="55">
+                        <h4>Vegetable & Egg Rice</h4>
+                        <p class="price">MVR 55/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Vegetable & Egg Rice', 55)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Garlic Rice" data-price="65">
+                        <h4>Garlic Rice</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Garlic Rice', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken Fried Rice" data-price="65">
+                        <h4>Chicken Fried Rice</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Fried Rice', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Tuna Fried Rice" data-price="65">
+                        <h4>Tuna Fried Rice</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Fried Rice', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Smoked Tuna Fried Rice" data-price="75">
+                        <h4>Smoked Tuna Fried Rice</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Smoked Tuna Fried Rice', 75)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Nasigoreng" data-price="75">
+                        <h4>Nasigoreng</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Nasigoreng', 75)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Mongolian Rice" data-price="80">
+                        <h4>Mongolian Rice</h4>
+                        <p class="price">MVR 80/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Mongolian Rice', 80)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="noodles" class="menu-category">
+                <h3>Noodles</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Vegetable & Egg Noodles" data-price="60">
+                        <h4>Vegetable & Egg Noodles</h4>
+                        <p class="price">MVR 60/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Vegetable & Egg Noodles', 60)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken Fried Noodles" data-price="65">
+                        <h4>Chicken Fried Noodles</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Fried Noodles', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Tuna Noodles" data-price="65">
+                        <h4>Tuna Noodles</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Noodles', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Smoked Tuna Noodles" data-price="65">
+                        <h4>Smoked Tuna Noodles</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Smoked Tuna Noodles', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Bamigoreng" data-price="75">
+                        <h4>Bamigoreng</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Bamigoreng', 75)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kottu" class="menu-category">
+                <h3>Kottu-Roshi</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Chicken Kottu" data-price="70">
+                        <h4>Chicken Kottu</h4>
+                        <p class="price">MVR 70/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Kottu', 70)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Tuna Kottu" data-price="65">
+                        <h4>Tuna Kottu</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Kottu', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Smoked Tuna Kottu" data-price="65">
+                        <h4>Smoked Tuna Kottu</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Smoked Tuna Kottu', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Mixed Fried Kottu" data-price="80">
+                        <h4>Mixed Fried Kottu</h4>
+                        <p class="price">MVR 80/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Mixed Fried Kottu', 80)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Cheese kottu roshi" data-price="75">
+                        <h4>Cheese Kottu Roshi</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Cheese kottu roshi', 75)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="devils" class="menu-category">
+                <h3>Devils & Spice</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Devil Fish" data-price="50">
+                        <h4>Devil Fish</h4>
+                        <p class="price">MVR 50/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Devil Fish', 50)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Devil Chicken" data-price="60">
+                        <h4>Devil Chicken</h4>
+                        <p class="price">MVR 60/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Devil Chicken', 60)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Devil Beef" data-price="75">
+                        <h4>Devil Beef</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Devil Beef', 75)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Devil Sousage" data-price="35">
+                        <h4>Devil Sausage</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Devil Sousage', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Kankun Devil Beef" data-price="35">
+                        <h4>Kankun Devil Beef</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Kankun Devil Beef', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chilli Chicken" data-price="60">
+                        <h4>Chilli Chicken</h4>
+                        <p class="price">MVR 60/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chilli Chicken', 60)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chilli sousage" data-price="35">
+                        <h4>Chilli Sausage</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chilli sousage', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chilli Fish" data-price="50">
+                        <h4>Chilli Fish</h4>
+                        <p class="price">MVR 50/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chilli Fish', 50)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chilli Beef" data-price="75">
+                        <h4>Chilli Beef</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chilli Beef', 75)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pasta" class="menu-category">
+                <h3>Spaghetti/Pasta</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Chicken & Tomato" data-price="80">
+                        <h4>Chicken & Tomato</h4>
+                        <p class="price">MVR 80/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken & Tomato', 80)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Carbonara (White sauce & Cheese)" data-price="80">
+                        <h4>Carbonara (White sauce & Cheese)</h4>
+                        <p class="price">MVR 80/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Carbonara (White sauce & Cheese)', 80)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Carbonara (White sauce with cheese)" data-price="85">
+                        <h4>Carbonara (White sauce with cheese)</h4>
+                        <p class="price">MVR 85/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Carbonara (White sauce with cheese)', 85)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Mushroom & olive" data-price="70">
+                        <h4>Mushroom & Olive</h4>
+                        <p class="price">MVR 70/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Mushroom & olive', 70)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Aglio e Olio" data-price="80">
+                        <h4>Aglio e Olio</h4>
+                        <p class="price">MVR 80/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Aglio e Olio', 80)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Smoked Tuna-Aglio e Olio" data-price="80">
+                        <h4>Smoked Tuna-Aglio e Olio</h4>
+                        <p class="price">MVR 80/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Smoked Tuna-Aglio e Olio', 80)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sandwich" class="menu-category">
+                <h3>Sandwich</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Tuna Sandwich" data-price="20">
+                        <h4>Tuna Sandwich</h4>
+                        <p class="price">MVR 20/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Sandwich', 20)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken Sandwich" data-price="20">
+                        <h4>Chicken Sandwich</h4>
+                        <p class="price">MVR 20/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Sandwich', 20)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Club Sandwich" data-price="65">
+                        <h4>Club Sandwich</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Club Sandwich', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Cheese Sandwich" data-price="25">
+                        <h4>Cheese Sandwich</h4>
+                        <p class="price">MVR 25/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Cheese Sandwich', 25)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Egg Sandwich" data-price="15">
+                        <h4>Egg Sandwich</h4>
+                        <p class="price">MVR 15/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Egg Sandwich', 15)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="submarine" class="menu-category">
+                <h3>Submarine</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Tuna Submarine" data-price="75">
+                        <h4>Tuna Submarine</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Submarine', 75)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken Submarine" data-price="75">
+                        <h4>Chicken Submarine</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Submarine', 75)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Beef Submarine" data-price="75">
+                        <h4>Beef Submarine</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Beef Submarine', 75)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pizza" class="menu-category">
+                <h3>Pizza</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Margharita Pizza" data-price="85">
+                        <h4>Margharita Pizza</h4>
+                        <p>Tomato & Cheese</p>
+                        <p class="price">MVR 85/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Margharita Pizza', 85)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken Pizza" data-price="99">
+                        <h4>Chicken Pizza</h4>
+                        <p>Chicken & Cheese</p>
+                        <p class="price">MVR 99/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Pizza', 99)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken & Mushroom Pizza" data-price="110">
+                        <h4>Chicken & Mushroom Pizza</h4>
+                        <p>Chicken, Mushroom & Cheese</p>
+                        <p class="price">MVR 110/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken & Mushroom Pizza', 110)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="BBQ Chicken Pizza" data-price="120">
+                        <h4>BBQ Chicken Pizza</h4>
+                        <p>Spiced BBQ chicken & Cheese</p>
+                        <p class="price">MVR 120/-</p>
+                        <button class="add-to-cart" onclick="addToCart('BBQ Chicken Pizza', 120)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Tuna Pizza" data-price="95">
+                        <h4>Tuna Pizza</h4>
+                        <p>Canned Tuna, Cheese</p>
+                        <p class="price">MVR 95/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Pizza', 95)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Pepperoni Pizza" data-price="120">
+                        <h4>Pepperoni Pizza</h4>
+                        <p>Salami, Chili peppers & Cheese</p>
+                        <p class="price">MVR 120/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Pepperoni Pizza', 120)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Sausage Pizza" data-price="99">
+                        <h4>Sausage Pizza</h4>
+                        <p>Chicken Sausage & Cheese</p>
+                        <p class="price">MVR 99/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Sausage Pizza', 99)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Island Pizza" data-price="110">
+                        <h4>Island Pizza</h4>
+                        <p>Smoked Tuna, Dried Tuna, Chili</p>
+                        <p class="price">MVR 110/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Island Pizza', 110)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="beverages" class="menu-category">
+                <h3>Beverages</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" data-name="Fresh Lemon" data-price="25">
+                        <h4>Fresh Lemon</h4>
+                        <p class="price">MVR 25/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Lemon', 25)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fresh Orange" data-price="30">
+                        <h4>Fresh Orange</h4>
+                        <p class="price">MVR 30/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Orange', 30)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fresh Watermelon" data-price="35">
+                        <h4>Fresh Watermelon</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Watermelon', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fresh Pineapple" data-price="35">
+                        <h4>Fresh Pineapple</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Pineapple', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fresh Coconut" data-price="35">
+                        <h4>Fresh Coconut</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Coconut', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fresh Mango" data-price="35">
+                        <h4>Fresh Mango</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Mango', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fresh Passion Fruit" data-price="35">
+                        <h4>Fresh Passion Fruit</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresh Passion Fruit', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Screw pine Fruit" data-price="35">
+                        <h4>Screw Pine Fruit</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Screw pine Fruit', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Nescafe Black Coffee" data-price="12">
+                        <h4>Nescafe Black Coffee</h4>
+                        <p class="price">MVR 12/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Nescafe Black Coffee', 12)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Nescafe Milk Coffee" data-price="20">
+                        <h4>Nescafe Milk Coffee</h4>
+                        <p class="price">MVR 20/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Nescafe Milk Coffee', 20)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Lavazza Black Coffee" data-price="25">
+                        <h4>Lavazza Black Coffee</h4>
+                        <p class="price">MVR 25/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Lavazza Black Coffee', 25)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Single Espresso" data-price="20">
+                        <h4>Single Espresso</h4>
+                        <p class="price">MVR 20/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Single Espresso', 20)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Lavazza Milk Coffee" data-price="35">
+                        <h4>Lavazza Milk Coffee</h4>
+                        <p class="price">MVR 35/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Lavazza Milk Coffee', 35)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Cold Brew (nescafe)" data-price="15">
+                        <h4>Cold Brew (Nescafe)</h4>
+                        <p class="price">MVR 15/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Cold Brew (nescafe)', 15)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Vanilla Milkshake" data-price="45">
+                        <h4>Vanilla Milkshake</h4>
+                        <p class="price">MVR 45/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Vanilla Milkshake', 45)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chocolate Milkshake" data-price="45">
+                        <h4>Chocolate Milkshake</h4>
+                        <p class="price">MVR 45/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chocolate Milkshake', 45)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Strawberry Milkshake" data-price="45">
+                        <h4>Strawberry Milkshake</h4>
+                        <p class="price">MVR 45/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Strawberry Milkshake', 45)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Coconut Milkshake" data-price="45">
+                        <h4>Coconut Milkshake</h4>
+                        <p class="price">MVR 45/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Coconut Milkshake', 45)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Faloodhaa" data-price="45">
+                        <h4>Faloodhaa</h4>
+                        <p class="price">MVR 45/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Faloodhaa', 45)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Black Ice Tea" data-price="25">
+                        <h4>Black Ice Tea</h4>
+                        <p class="price">MVR 25/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Black Ice Tea', 25)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Green Ice Tea" data-price="25">
+                        <h4>Green Ice Tea</h4>
+                        <p class="price">MVR 25/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Green Ice Tea', 25)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Island Mojito" data-price="40">
+                        <h4>Island Mojito</h4>
+                        <p class="price">MVR 40/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Island Mojito', 40)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Strawberry Mojito" data-price="40">
+                        <h4>Strawberry Mojito</h4>
+                        <p class="price">MVR 40/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Strawberry Mojito', 40)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="watermelon Mojito" data-price="40">
+                        <h4>Watermelon Mojito</h4>
+                        <p class="price">MVR 40/-</p>
+                        <button class="add-to-cart" onclick="addToCart('watermelon Mojito', 40)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Island Blue Mojito" data-price="40">
+                        <h4>Island Blue Mojito</h4>
+                        <p class="price">MVR 40/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Island Blue Mojito', 40)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Passion Mojito" data-price="40">
+                        <h4>Passion Mojito</h4>
+                        <p class="price">MVR 40/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Passion Mojito', 40)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Passion Bull" data-price="70">
+                        <h4>Passion Bull</h4>
+                        <p class="price">MVR 70/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Passion Bull', 70)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Coconut Mojito" data-price="40">
+                        <h4>Coconut Mojito</h4>
+                        <p class="price">MVR 40/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Coconut Mojito', 40)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Fish & Chips" data-price="65">
+                        <h4>Fish & Chips</h4>
+                        <p class="price">MVR 65/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Fish & Chips', 65)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chicken & Chips" data-price="75">
+                        <h4>Chicken & Chips</h4>
+                        <p class="price">MVR 75/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chicken & Chips', 75)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item" data-name="Chips Portion" data-price="30">
+                        <h4>Chips Portion</h4>
+                        <p class="price">MVR 30/-</p>
+                        <button class="add-to-cart" onclick="addToCart('Chips Portion', 30)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Island Prime</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Island Prime, where culinary excellence meets island hospitality. We pride ourselves on serving the finest selection of international and local dishes, prepared with fresh ingredients and authentic flavors.</p>
+                    <p>Our experienced chefs bring together traditional cooking techniques with modern presentation to create memorable dining experiences for our guests.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <h4>Premium Quality</h4>
+                            <p>Fresh ingredients sourced daily</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-motorcycle"></i>
+                            <h4>Fast Delivery</h4>
+                            <p>Quick and reliable service</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <h4>5-Star Service</h4>
+                            <p>Exceptional customer experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>9730607</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>Opening Hours</h4>
+                        <p>Daily: 10:00 AM - 12:00 AM</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Male', Maldives</p>
+                    </div>
+                </div>
+                <div class="reservation-note">
+                    <p><strong>For Deliveries Contact: 9730607</strong></p>
+                    <p>To ensure a seamless dining experience and to accommodate your preferences, we highly recommend making a reservation before your visit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Order</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: MVR <span id="cart-total">0</span>/-</h3>
+            </div>
+            <div class="checkout-section">
+                <h3>Delivery Information</h3>
+                <form id="checkout-form">
+                    <input type="text" id="customer-name" placeholder="Full Name" required>
+                    <input type="tel" id="customer-phone" placeholder="Phone Number" required>
+                    <textarea id="customer-address" placeholder="Delivery Address" required></textarea>
+                    <textarea id="special-instructions" placeholder="Special Instructions (Optional)"></textarea>
+                    <button type="submit" class="checkout-btn">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Island Prime</h3>
+                    <p>Premium island cuisine delivered to your doorstep</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 9730607</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Male', Maldives</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Island Prime. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" >
+
+    </script>
+
+   
